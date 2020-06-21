@@ -9,9 +9,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jurplel/install-qt-action.git"
+    "url": "git+https://github.com/swift-project/install-qt-action.git"
   },
-  "author": "jurplel",
+  "author": "swift-project",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.0.0",
