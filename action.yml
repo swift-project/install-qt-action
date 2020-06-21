@@ -35,6 +35,15 @@ inputs:
     default: '==0.7'
   extra:
     description: "Any extra arguments to append to the back"
+  src:
+    description: "Whether or not to install Qt source code"
+    default: 'false'
+  doc:
+    description: "Whether or not to install Qt documentation"
+    default: 'false'
+  examples:
+    description: "Whether or not to install Qt examples"
+    default: 'false'
 runs:
   using: 'node12'
   main: 'lib/main.js'

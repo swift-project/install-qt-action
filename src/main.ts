@@ -91,6 +91,19 @@ async function run() {
 
         //run aqtinstall with args
         await exec.exec(`${pythonName} -m aqt install`, args);
+
+        //run aqtinstall for src,doc,examples
+        const argsNoArch = args.filter(function(arg) { return !arch || arch === arg; });
+        const argsNoArchNoModules = argsNoArch.slice(0, modules ? argsNoArch.indexOf("-m") : argsNoArch.length);
+        if (core.getInput("src") == "true") {
+          await exec.exec(`${pythonName} -m aqt src`, argsNoArchNoModules);
+        }
+        if (core.getInput("doc") == "true") {
+          await exec.exec(`${pythonName} -m aqt doc`, argsNoArch);
+        }
+        if (core.getInput("examples") == "true") {
+          await exec.exec(`${pythonName} -m aqt examples`, argsNoArch);
+        }
       }
 
       //set environment variables
